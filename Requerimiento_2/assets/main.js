@@ -101,12 +101,28 @@ window.onload = function () {
         //Validamos los inputs radio
         let rad_select = false
         for (let rad of inputsTamano) {
-            if (rad.checked)
+            if (rad.checked) {
                 rad_select = true;
-            break;
+                break;
+            }
         }
-        if (!rad_select)
+        if (!rad_select) {
+            alert("Es necesario seleccionar un tamaño de pizza");
             return false;
+        }
+
+        //Validamos los checkboxes
+        let ingr_selected = false
+        for (let ing of ingr) {
+            if (ing.checked) {
+                ingr_selected = true;
+                break;
+            }
+        }
+        if (!ingr_selected) {
+            alert("Es necesario seleccionar 1 ingrediente")
+            return false;
+        };
 
         // Si no hemos devuelto false antes. Damos el formulario por validado
         return true;
