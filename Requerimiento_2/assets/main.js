@@ -42,7 +42,7 @@ window.onload = function () {
 
         if (t_pequena.checked == true)
             precioTotal = 5;
-        else if (t_mediana.checked == false)
+        else if (t_mediana.checked == true)
             precioTotal = 10;
         else
             precioTotal = 15;
