@@ -1,5 +1,5 @@
 
-function cargar(){
+function agregarElementos(){
 
     // Cracion de la tabla
 

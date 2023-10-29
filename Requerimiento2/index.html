@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Req2</title>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="js/main.js"></script>
+    </head>
+    <body>
+        <div id="divP">
+            <h1>Realiza tú pedido:</h1>
+
+            <form id="pedido" action="">
+                
+                <fieldset>
+                    <h3>Datos de envío:</h3>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" class="direccion">
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" class="direccion">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" class="direccion">
+                    <label for="email1">Email:</label>
+                    <input type="email" id="email1" class="direccion">
+                </fieldset>
+                <fieldset>
+                    <h3>Selecciona el tamaño de la pizza:</h3>
+                    <label for="pequeña" name="pequeña" >Pequeña</label>
+                    <input type="radio" name="tamano" id="pequeña" value="p">
+                    <label for="mediana" name="mediana">Mediana</label>
+                    <input type="radio" name="tamano" id="mediana" value="m">
+                    <label for="grande" name="grande">Grande</label>
+                    <input type="radio" name="tamano" id="grande" value="g">
+                </fieldset>
+                <fieldset>
+                    <input type="checkbox" id="bacon" name="ingrediente"></input>
+                    <label for="bacon" name="bacon">Bacon</label>
+                    <input type="checkbox" id="pollo" name="ingrediente"></input>
+                    <label for="pollo" name="pollo">Pollo</label>
+                    <input type="checkbox" id="pepperoni" name="ingrediente"></input>
+                    <label for="pepperoni" name="pepperoni" >Pepperoni</label>
+                    <input type="checkbox" id="atun" name="ingrediente"></input>
+                    <label for="atun" name="atun">Atún</label>
+                </fieldset>
+                <button type="button" onclick="validacion()">Procesar Pedido</button>
+                <div id="resultado">
+                    
+                </div>
+            </form>
+
+            
+        </div>
+    </body>
+</html>
