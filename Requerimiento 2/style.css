@@ -1,0 +1,21 @@
+.campo-formulario {
+    display: block;
+    margin: 15px 0;
+}
+
+h1{
+    color:rgb(206, 30, 30);
+    background-color: rgb(244, 236, 193);
+    text-align: center;
+}
+
+#form{
+    background-color: rgb(223, 253, 222);
+}
+#ptotal{
+    color:rgb(206, 30, 30);
+    background-color: rgb(244, 236, 193);
+    font-size: larger;
+    font-weight: bold;
+    display:none;
+}

@@ -1,0 +1,32 @@
+#cabecera{
+    color:rgb(4, 14, 117);
+    text-align: center;
+}
+#cabecera2{
+    color:rgb(27, 44, 224);
+    text-align: center;
+}
+#div2{
+    margin:20px;
+}
+#div3{
+    margin:20px;
+}
+#div4{
+    margin:20px;
+}
+#botonEnviar{
+    margin-top:20px;
+    margin-bottom: 20px;
+    background-color: rgb(213, 171, 253);
+}
+input,select,textarea{
+    margin: 10px;
+}
+#tabla{
+    text-align: center;
+    padding: 5px;
+}
+#trCabecera{
+    font-size:large;
+}
