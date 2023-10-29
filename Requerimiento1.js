@@ -1,3 +1,7 @@
+
+//Creacion del evento para que se ejecute el codigo de javascript una vez el dom completo haya sido cargado 
+document.addEventListener("DOMContentLoaded", function() {
+
 //Creacion del formulario,Fieldset y legend.
 //Crear un elemento de formulario
 let formulario =document.createElement("form");
@@ -313,5 +317,10 @@ encuadro.appendChild(document.createElement("br"));//crear los elementos Salto d
 encuadro.appendChild(imagenHtml5);
 encuadro.appendChild(imagenJavascript);
 
-  //añadir el formulario dentro del elemento body del html5 
-document.body.appendChild(formulario);
+  //añadir el formulario dentro del elemento body - div del html5 
+  // Obtener el div "contenedor" por su id
+  let contenedorDiv = document.getElementById("contenedor");
+
+  // Agregar el formulario al div "contenedor"
+  contenedorDiv.appendChild(formulario);
+});
