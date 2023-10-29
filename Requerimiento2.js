@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function calcularPrecio() {
         var tamaño = document.querySelector('input[name="tamaño"]:checked');
         var ingredientes = document.querySelectorAll('input[name="ingredientes"]:checked');
-        var precioTotalElement = document.getElementById('precioTotal');
+        var precioTotalElement = document.getElementById("precioTotal");
 
         if (tamaño && ingredientes.length > 0) {
             let precio = parseInt(tamaño.value);
