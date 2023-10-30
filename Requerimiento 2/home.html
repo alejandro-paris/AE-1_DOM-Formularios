@@ -10,7 +10,16 @@
 </head>
 
 <body>
-    <h1>Realiza tu pedido</h1>
+    <div id="h1">
+        <div>
+            <h1>Realiza tu pedido</h1>
+        </div>
+        
+        <div>
+            <img src="pizza2.jpg" id="pizza">
+        </div>
+    </div>
+    
     <form id="form" action="URL" method="post">
         <div class="campo-formulario">
             <label id="lnombre">Nombre: </label>
@@ -35,26 +44,26 @@
 
         <div class="campo-formulario">
             <label id="ltamaño">Introduce el tamaño de la pizza: </label><br />
-            <input type="radio" name="tamaño" value="tamaño_pequeña" />Pequeña
-            <input type="radio" name="tamaño" value="tamaño_mediana" />Mediana
-            <input type="radio" name="tamaño" value="tamaño_grande" />Grande
+            <input type="radio" name="tamaño" id="pequeña" />Pequeña
+            <input type="radio" name="tamaño" id="mediana" />Mediana
+            <input type="radio" name="tamaño" id="grande" />Grande
         </div>
 
         <div class="campo-formulario">
             <label id="lingrediente">Selecciona tus ingredientes: </label><br />
-            <input type="checkbox" name="ingrediente" value="tomate"> Tomate
-            <input type="checkbox" name="ingrediente" value="queso"> Queso
-            <input type="checkbox" name="ingrediente" value="carne"> Carne
-            <input type="checkbox" name="ingrediente" value="verdura"> Verduras
+            <input type="checkbox" name="ingrediente" value="1"> Tomate
+            <input type="checkbox" name="ingrediente" value="1"> Queso
+            <input type="checkbox" name="ingrediente" value="1"> Carne
+            <input type="checkbox" name="ingrediente" value="1"> Verduras
         </div>
 
 
         <input type="button" id="procesar" value="Procesar pedido"><br /><br />
-        <p id="ptotal">TOTAL DEL PEDIDO</p>
+        <p id="ptotal" ><span id="precioTotal"></span> </p>
 
         <p>Una vez comprobado tu pedido, haz click para enviar</p>
-        <input type="submit" id="enviar" value="Enviar pedido">
-        <input type="reset" id="reset" value="Volver a comenzar pedido" />
+        <input type="submit" id="enviar" value="Enviar pedido"><br />
+        <input type="reset" id="reset" value="Volver a comenzar pedido" /><br />
 
 
     </form>

@@ -3,19 +3,30 @@
     margin: 15px 0;
 }
 
-h1{
+#h1{
     color:rgb(206, 30, 30);
-    background-color: rgb(244, 236, 193);
+    background-color: rgb(246, 243, 226);
     text-align: center;
 }
 
 #form{
-    background-color: rgb(223, 253, 222);
+    background-color: rgb(240, 248, 240);
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-#ptotal{
+#precio_pizza{
     color:rgb(206, 30, 30);
     background-color: rgb(244, 236, 193);
     font-size: larger;
     font-weight: bold;
     display:block;
+}
+#pizza{
+    width: 10%;
+    float:right;
 }

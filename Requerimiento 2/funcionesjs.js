@@ -16,65 +16,47 @@ function validacionformulario() {
             break;
         }
     }
-
     if(!seleccionado) {
         alert('[ERROR] Debe seleccionar un tamaño de pizza');
         return false;
     }
 
     //validación elección al menos un ingrediente (checkbox)
-    ingrediente = document.getElementsByName("ingrediente")
-    var select = false;
-    for(var j=0;j<ingrediente.length;i++){
-        if (ingrediente[j].checked){
-            alert('Todo es correcto, puede enviar su pedido')
-            select= true;
-            break;
-        }if(!select) {
-            alert('[ERROR] Debe seleccionar algun ingrediente');
-            return false;
+    var ingredientes = document.querySelectorAll('input[name="ingrediente"]:checked'); 
+    var precioTotalElement = document.getElementById("precioTotal");
+    var precioingredientes = 0;
+
+    if (ingredientes.length > 0) {
+
+        for (let ingr of ingredientes) {
+            precioingredientes += parseInt(ingr.value);
         }
-    }  
+    } else {
+        precioTotalElement.textContent = "0 €";
+        alert("Por favor, seleccione al menos un ingrediente.");
+    }
 }
 
 //CALCULO PEDIDO
 function calculoPedido(){
-    let preciotamaño = 0;
-    switch(tamaño.value){
-        case tamaño_pequeña: 
-                preciotamaño=5;
-                break;
-        case tamaño_mediana: 
-                preciotamaño=10;
-                break;
-        case tamaño_grande:
-                preciotamaño=15;
+    var pequeña = document.getElementById("pequeña")
+    var mediana = document.getElementById("mediana")
+    var grande = document.getElementById("grande")
+    var preciotamaño = 0;
+    if (pequeña.checked == true){
+        preciotamaño = 5;
+    } else if (mediana.checked == true){
+        preciotamaño = 10;
+    } else if (grande.checked == true){
+        preciotamaño = 15;
     }
 
     var ingredientes = document.querySelectorAll('input[name="ingrediente"]:checked');
+    var precioingredientes = 0;
     for(ele of ingredientes){
         if (ele.checked)
         precioingredientes +=1;
     }
-   /* let preciotomate = 0;
-    if (ingrediente.value.checked == "tomate"){
-        preciotomate=1;
-    }else preciotomate=0;
-
-    let precioqueso=0;
-    if (ingrediente.value.checked == "queso"){
-        precioqueso=1;
-    }else precioqueso=0;
-
-    let preciocarne=0;
-    if (ingrediente.value.checked == "carne"){
-        preciocarne=1;
-    }else preciocarne=0;
-
-    let precioverdura=0;
-    if (ingrediente.value.checked == "verdura"){
-        precioverdura=1;
-    }else precioverdura=0;*/
 
     let preciototal = preciotamaño + precioingredientes
 
@@ -83,23 +65,27 @@ function calculoPedido(){
 }
 function generarTextoPrecio() {
 
-   
-
     //Generamos el nodo que contiene el precio actual de la pizza y lo insertamos.
     const node_precio = document.createElement("p");
     node_precio.id = "precio_pizza";
     const texto_precio = document.createTextNode(`El precio de tu pedido es ${calculoPedido()} €`);
 
     node_precio.appendChild(texto_precio);
-    form.appendChild(node_precio);
+    ptotal.appendChild(node_precio);
 
+}
+
+function borrarformulario(){
+    let parrafo = document.getElementById("ptotal")
+    parrafo.style.display = "none";
 }
 
 //ENVIO INFORMACION FORMULARIO
 window.onload = function(){
-    procesar.onclick = generarTextoPrecio;
-    procesar.onclick = calculoPedido;
-    form.onsubmit = validacionformulario; 
+    procesar.addEventListener("click",calculoPedido)
+    procesar.addEventListener("click",generarTextoPrecio)
+    procesar.addEventListener("click",validacionformulario) 
+    reset.addEventListener("click",borrarformulario)
     
                                     
 }
