@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,19 @@
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="funcionesjs.js"></script>
 </head>
+
 <body>
     <h1>Realiza tu pedido</h1>
     <form id="form" action="URL" method="post">
         <div class="campo-formulario">
             <label id="lnombre">Nombre: </label>
             <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre">
-        </div> 
+        </div>
 
         <div class="campo-formulario">
-            <label id="ldireccion">Dirección: </label><br/>
-            <textarea id="direccion"  style="resize: none" name="direccion" placeholder="Introduce tu domicilio"></textarea>
+            <label id="ldireccion">Dirección: </label><br />
+            <textarea id="direccion" style="resize: none" name="direccion"
+                placeholder="Introduce tu domicilio"></textarea>
         </div>
 
         <div class="campo-formulario">
@@ -29,34 +32,39 @@
             <label id="lemail">Email: </label>
             <input type="email" id="email" name="email" placeholder="Introduce tu email">
         </div>
-        
+
         <div class="campo-formulario">
-            <label id="ltamaño">Introduce el tamaño de la pizza: </label><br/>
-            <input type="radio" name="tamaño" value="tamaño_pequeña"/>Pequeña
-            <input type="radio" name="tamaño" value="tamaño_mediana"/>Mediana
-            <input type="radio" name="tamaño" value="tamaño_grande"/>Grande
+            <label id="ltamaño">Introduce el tamaño de la pizza: </label><br />
+            <input type="radio" name="tamaño" value="tamaño_pequeña" />Pequeña
+            <input type="radio" name="tamaño" value="tamaño_mediana" />Mediana
+            <input type="radio" name="tamaño" value="tamaño_grande" />Grande
         </div>
 
         <div class="campo-formulario">
-            <label id="lingrediente">Selecciona tus ingredientes: </label><br/>
+            <label id="lingrediente">Selecciona tus ingredientes: </label><br />
             <input type="checkbox" name="ingrediente" value="tomate"> Tomate
             <input type="checkbox" name="ingrediente" value="queso"> Queso
             <input type="checkbox" name="ingrediente" value="carne"> Carne
             <input type="checkbox" name="ingrediente" value="verdura"> Verduras
         </div>
 
+
+        <input type="button" id="procesar" value="Procesar pedido"><br /><br />
+        <p id="ptotal">TOTAL DEL PEDIDO</p>
+
         <p>Una vez comprobado tu pedido, haz click para enviar</p>
         <input type="submit" id="enviar" value="Enviar pedido">
         <input type="reset" id="reset" value="Volver a comenzar pedido" />
 
-    
-    </form>
-        
 
-    <p id="ptotal" >TOTAL DEL PEDIDO:</p>
+    </form>
+
+
+  
 
 
 
 
 </body>
+
 </html>

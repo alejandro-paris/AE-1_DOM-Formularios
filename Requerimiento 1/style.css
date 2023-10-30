@@ -8,9 +8,13 @@
 }
 #div2{
     margin:20px;
+    display: flex;
+    justify-content: center;
 }
 #div3{
     margin:20px;
+    display: flex;
+    justify-content: center;
 }
 #div4{
     margin:20px;
@@ -18,7 +22,16 @@
 #botonEnviar{
     margin-top:20px;
     margin-bottom: 20px;
-    background-color: rgb(213, 171, 253);
+    background-color: rgb(96, 190, 245);
+    font-weight: bold;
+    font-size: large;
+}
+#boton{
+    margin-top:20px;
+    margin-bottom: 20px;
+    background-color: rgb(96, 190, 245);
+    font-weight: bold;
+    font-size: large;
 }
 input,select,textarea{
     margin: 10px;
@@ -26,7 +39,27 @@ input,select,textarea{
 #tabla{
     text-align: center;
     padding: 5px;
+    border-radius: 10px;
 }
 #trCabecera{
     font-size:large;
+    background-color: antiquewhite;
+}
+
+#img1{
+    width: 15%;
+    float:right;
+  
+}
+#img2{
+    width: 15%;
+  
+}
+#formulario{
+    background-color: rgb(253, 253, 184);
+    position:absolute;
+    width: 60%;
+    left: 20%;
+    right: 20%;
+    text-align: center;
 }

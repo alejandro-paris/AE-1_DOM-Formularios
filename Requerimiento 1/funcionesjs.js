@@ -205,11 +205,14 @@ function cargar(){
         boton.value = "Registre su nuevo contacto"
         boton.id = "boton"
         div3.appendChild(boton)
+        
 
     
     // CREAR EL FORMULARIO
+    function crearformulario(){
         var formulario = document.createElement("form");
-        
+        formulario.id = "formulario"
+
         // Agregar un campo de entrada de texto
         var txt = document.createTextNode("Nombre completo:   ")
         var inputTexto = document.createElement("input");
@@ -253,6 +256,8 @@ function cargar(){
         formulario.appendChild(inputTexto);
         var salto = document.createElement("br")
         formulario.appendChild(salto)
+        var salto2 = document.createElement("br")
+        formulario.appendChild(salto2)
 
         // Agregar 4 campoS de entrada de radio button para su cumpleaños
         var txt = document.createTextNode("Su cumpleaños es en:   ")
@@ -294,6 +299,9 @@ function cargar(){
         formulario.appendChild(t);
         var salto = document.createElement("br")
         formulario.appendChild(salto)
+        var salto2 = document.createElement("br")
+        formulario.appendChild(salto2)
+
 
         // Agregar 4 campos de entrada de radio button para su comida favorita
         var txt = document.createTextNode("Su comida favorita es:   ")
@@ -335,6 +343,9 @@ function cargar(){
         formulario.appendChild(t)
         var salto = document.createElement("br")
         formulario.appendChild(salto)
+        var salto2 = document.createElement("br")
+        formulario.appendChild(salto2)
+        
 
         //agregar 5 checkbox diferentes: lugar de encuentro (trabajo, gimnasio, vecindario, restaurante, campo)
         var txt = document.createTextNode("Solemos quedar en el:   ")
@@ -393,6 +404,8 @@ function cargar(){
         formulario.appendChild(t)
         var salto = document.createElement("br")
         formulario.appendChild(salto)
+        var salto2 = document.createElement("br")
+        formulario.appendChild(salto2)
 
         //agregar un select con las opciones: ambito (familia, amigos infancia, compañero trabajo, compañero gimansio, vecino)
         var txt = document.createTextNode("Es de mi círculo de:   ")
@@ -439,6 +452,8 @@ function cargar(){
         var inputTexto = document.createElement("textarea"); 
         inputTexto.name = "descripcion";
         inputTexto.id = "descripcion";
+        inputTexto.cols = 30;
+        inputTexto.rows = 6;
         inputTexto.placeholder = "Escribe una breve descripción";
         formulario.appendChild(txt);
         formulario.appendChild(inputTexto);
@@ -453,25 +468,42 @@ function cargar(){
         botonEnviar.id = "botonEnviar";
         formulario.appendChild(botonEnviar);
 
-        
-
 
         // Agregar el formulario a contenedor div4
         var div4 = document.createElement("div");
         div4.id = "div4";
         div4.appendChild(formulario)
         document.body.appendChild(div4)
+        div4.style.display="none"
 
-       div4.onclick= div4.appendChild(saludar())
+    }
+    
+    //función para que al pulsar el boton se muestre el formulario completo
+    boton.onclick = function(){
+        crearformulario();
+        div4.style.display="block"
+    }    
+
+    //CREAR DIV PARA INTRODUCIR IMAGENES
+    let imagen1 = document.createElement("img")
+    imagen1.id = "img1"
+    imagen1.src ="img/img1.jpg";
+    imagen1.alt = "Imagen_buzón";
+    
+
+    let imagen2 = document.createElement("img")
+    imagen2.id = "img2"
+    imagen2.src ="img/img2.jpg";
+    imagen2.alt = "Imagen_agenda";
+
+    var div5 = document.createElement("div");
+    div5.id = "div5";
+    div5.appendChild(imagen1)
+    div5.appendChild(imagen2)
+
+    document.body.appendChild(div5);
 
 
-}
 
-function saludar(){
-    let saludo = document.createTextNode("ENVIADOOO");
-    let parrafo = document.createElement("p");
-    parrafo.appendChild(saludo);
-    div4.appendChild(parrafo)
-   
 }
 

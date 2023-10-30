@@ -23,18 +23,18 @@ function validacionformulario() {
     }
 
     //validación elección al menos un ingrediente (checkbox)
-    var ingrediente=[]
     ingrediente = document.getElementsByName("ingrediente")
+    var select = false;
     for(var j=0;j<ingrediente.length;i++){
         if (ingrediente[j].checked){
             alert('Todo es correcto, puede enviar su pedido')
-            return true;
-        }else {
+            select= true;
+            break;
+        }if(!select) {
             alert('[ERROR] Debe seleccionar algun ingrediente');
             return false;
         }
-    }   
-
+    }  
 }
 
 //CALCULO PEDIDO
@@ -51,7 +51,12 @@ function calculoPedido(){
                 preciotamaño=15;
     }
 
-    let preciotomate=0;
+    var ingredientes = document.querySelectorAll('input[name="ingrediente"]:checked');
+    for(ele of ingredientes){
+        if (ele.checked)
+        precioingredientes +=1;
+    }
+   /* let preciotomate = 0;
     if (ingrediente.value.checked == "tomate"){
         preciotomate=1;
     }else preciotomate=0;
@@ -69,19 +74,33 @@ function calculoPedido(){
     let precioverdura=0;
     if (ingrediente.value.checked == "verdura"){
         precioverdura=1;
-    }else precioverdura=0;
+    }else precioverdura=0;*/
 
-    let preciototal = preciotamaño + preciotomate + precioqueso + preciocarne + precioverdura
+    let preciototal = preciotamaño + precioingredientes
 
-    return alert(("El precio total es: "+preciototal))
+    return preciototal;
+
+}
+function generarTextoPrecio() {
+
+   
+
+    //Generamos el nodo que contiene el precio actual de la pizza y lo insertamos.
+    const node_precio = document.createElement("p");
+    node_precio.id = "precio_pizza";
+    const texto_precio = document.createTextNode(`El precio de tu pedido es ${calculoPedido()} €`);
+
+    node_precio.appendChild(texto_precio);
+    form.appendChild(node_precio);
 
 }
 
-
 //ENVIO INFORMACION FORMULARIO
 window.onload = function(){
+    procesar.onclick = generarTextoPrecio;
+    procesar.onclick = calculoPedido;
     form.onsubmit = validacionformulario; 
-    enviar.onclick = calculoPedido;
+    
                                     
 }
 
